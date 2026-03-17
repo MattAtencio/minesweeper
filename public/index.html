@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Mines</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Top bar -->
+    <header id="header">
+      <div class="stat" id="mine-count">
+        <svg viewBox="0 0 24 24" class="stat-icon"><circle cx="12" cy="12" r="6" fill="currentColor"/><line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span id="mines-left">10</span>
+      </div>
+      <button id="face-btn" aria-label="New game">
+        <span id="face">😊</span>
+      </button>
+      <div class="stat" id="timer-display">
+        <svg viewBox="0 0 24 24" class="stat-icon"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><line x1="12" y1="13" x2="12" y2="9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="13" x2="15" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="2" x2="12" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span id="timer">000</span>
+      </div>
+    </header>
+
+    <!-- Grid -->
+    <div id="grid-wrap">
+      <div id="grid"></div>
+    </div>
+
+    <!-- Difficulty selector -->
+    <nav id="difficulty">
+      <button class="diff-btn active" data-diff="easy">Easy</button>
+      <button class="diff-btn" data-diff="medium">Medium</button>
+      <button class="diff-btn" data-diff="hard">Hard</button>
+    </nav>
+  </div>
+
+  <!-- Win/lose overlay -->
+  <div id="overlay" class="hidden">
+    <div id="overlay-content">
+      <div id="overlay-emoji"></div>
+      <div id="overlay-title"></div>
+      <div id="overlay-subtitle"></div>
+      <button id="overlay-btn">Play Again</button>
+    </div>
+  </div>
+
+  <!-- Canvas for particles -->
+  <canvas id="fx-canvas"></canvas>
+
+  <script src="/audio.js"></script>
+  <script src="/game.js"></script>
+</body>
+</html>
