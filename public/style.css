@@ -91,6 +91,24 @@ html, body {
 
 #timer-display { justify-content: flex-end; }
 
+#help-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--tile);
+  color: var(--text-dim);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+#help-btn:hover { background: var(--accent); color: #fff; }
+
 #face-btn {
   background: none;
   border: none;
