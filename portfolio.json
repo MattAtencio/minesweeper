@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/MattAtencio/portfolio/main/schemas/portfolio.schema.json",
+  "title": "Minesweeper",
+  "tagline": "Modern Minesweeper with haptics and audio",
+  "description": "A modern Minesweeper PWA with three difficulty levels, haptic vibration patterns, and synthesized sound effects. Features cascade reveals, particle explosions, chord reveal mechanics, and a responsive dark-themed UI.",
+  "category": "games",
+  "status": "active",
+  "techStack": [
+    "JavaScript",
+    "HTML5",
+    "CSS3",
+    "Web Audio API",
+    "PWA"
+  ],
+  "liveUrl": "https://minesweeper.mattatencio.com",
+  "highlights": [
+    "Haptic feedback with custom vibration patterns",
+    "Synthesized audio effects via Web Audio API",
+    "Three difficulty levels with particle effects and screen shake"
+  ],
+  "isPublic": true,
+  "startDate": "2025-01",
+  "featured": false
+}
