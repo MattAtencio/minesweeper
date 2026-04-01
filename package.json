@@ -1,26 +1,6 @@
 {
-  "name": "minesweeper",
+  "name": "mines",
   "version": "1.0.0",
   "private": true,
-  "description": "Classic Minesweeper with modern UI",
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@ducanh2912/next-pwa": "^10.2.9",
-    "next": "^16.1.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "zustand": "^5.0.3"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.0",
-    "@types/node": "^22.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "tailwindcss": "^4.1.0",
-    "typescript": "^5.7.0"
-  }
+  "description": "Modern minesweeper with haptics"
 }

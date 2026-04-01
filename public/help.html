@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Mines — Help</title>
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #16161e;
+      --tile: #1e1e2a;
+      --border: #2a2a3a;
+      --text: #e8e8f0;
+      --text-dim: #6a6a80;
+      --accent: #6c5ce7;
+      --accent-glow: rgba(108, 92, 231, 0.3);
+      --radius: 8px;
+      color-scheme: dark;
+    }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .page {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 24px;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 0.8; }
+    .back-link svg { width: 16px; height: 16px; }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    h1 span { color: var(--accent); }
+
+    .subtitle {
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 32px;
+    }
+
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+
+    .section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section h2 .icon { font-size: 20px; }
+
+    .section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .section li {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+      padding-left: 20px;
+      position: relative;
+    }
+    .section li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.6;
+    }
+
+    .section p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-dim);
+    }
+
+    .section p a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .section p a:hover { text-decoration: underline; }
+
+    .number-guide {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .number-chip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius);
+      background: var(--bg);
+      font-weight: 900;
+      font-size: 16px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.4);
+    }
+    .number-chip[data-n="1"] { color: #5b9df5; }
+    .number-chip[data-n="2"] { color: #2ed573; }
+    .number-chip[data-n="3"] { color: #ff6b6b; }
+    .number-chip[data-n="4"] { color: #a55eea; }
+    .number-chip[data-n="5"] { color: #ff4757; }
+    .number-chip[data-n="6"] { color: #1abc9c; }
+    .number-chip[data-n="7"] { color: #e8e8f0; }
+    .number-chip[data-n="8"] { color: #6a6a80; }
+
+    .key {
+      display: inline-block;
+      background: var(--tile);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+      vertical-align: middle;
+    }
+
+    @media (max-width: 400px) {
+      h1 { font-size: 26px; }
+      .section { padding: 16px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a href="/" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Game
+    </a>
+
+    <h1><span>Mines</span> — Help</h1>
+    <p class="subtitle">Everything you need to know to sweep those mines.</p>
+
+    <!-- How to Play -->
+    <div class="section">
+      <h2><span class="icon">🎮</span> How to Play</h2>
+      <ul>
+        <li><strong>Tap</strong> (or click) a tile to reveal it. Your first tap is always safe.</li>
+        <li>A revealed tile shows a <strong>number</strong> indicating how many of its 8 neighbors contain mines.</li>
+        <li>An empty tile (no number) means zero adjacent mines — its neighbors are automatically revealed in a cascade.</li>
+        <li><strong>Long-press</strong> (or right-click on desktop) to place a <span style="color:var(--flag);">flag</span> on a tile you suspect is a mine.</li>
+        <li>Long-press a flagged tile again to <strong>remove the flag</strong>.</li>
+        <li><strong>Tap a revealed number</strong> when the correct number of adjacent flags are placed to auto-reveal the remaining neighbors (chord reveal).</li>
+        <li>Reveal all non-mine tiles to <strong>win</strong>. Hit a mine and it is game over.</li>
+      </ul>
+      <div class="number-guide">
+        <div class="number-chip" data-n="1">1</div>
+        <div class="number-chip" data-n="2">2</div>
+        <div class="number-chip" data-n="3">3</div>
+        <div class="number-chip" data-n="4">4</div>
+        <div class="number-chip" data-n="5">5</div>
+        <div class="number-chip" data-n="6">6</div>
+        <div class="number-chip" data-n="7">7</div>
+        <div class="number-chip" data-n="8">8</div>
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="section">
+      <h2><span class="icon">💡</span> Tips &amp; Strategies</h2>
+      <ul>
+        <li><strong>Start at the edges or corners</strong> — they have fewer neighbors, so the numbers are easier to work with.</li>
+        <li><strong>Use the numbers.</strong> If a "1" tile has only one unrevealed neighbor, that neighbor must be a mine — flag it.</li>
+        <li><strong>Subtract known mines.</strong> If a "3" already has two flagged neighbors, only one more adjacent tile is a mine.</li>
+        <li><strong>Use chord reveal</strong> to speed up play. Once all mines around a number are flagged, tap the number to reveal the rest at once.</li>
+        <li><strong>Look for patterns.</strong> Common patterns like 1-2-1 along an edge always resolve the same way.</li>
+        <li><strong>Flag conservatively.</strong> A wrong flag can cause a chord reveal to hit a mine. Only flag when you are sure.</li>
+        <li><strong>Change difficulty</strong> using the buttons at the bottom: Easy (9x9, 10 mines), Medium (16x16, 40 mines), Hard (16x30, 99 mines).</li>
+      </ul>
+    </div>
+
+    <!-- About -->
+    <div class="section">
+      <h2><span class="icon">ℹ️</span> About</h2>
+      <p>
+        <strong>Mines</strong> is a modern take on the classic Minesweeper, built as a lightweight
+        progressive web app. It features satisfying haptic feedback, cascade animations,
+        particle effects, and a dark theme designed for comfortable play.
+        Install it on your home screen for a native app-like experience.
+      </p>
+    </div>
+
+    <a href="/" class="back-link" style="margin-top: 8px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Game
+    </a>
+  </div>
+</body>
+</html>
